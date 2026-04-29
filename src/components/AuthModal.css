@@ -1,0 +1,21 @@
+.auth-ov{position:fixed;inset:0;z-index:800;background:rgba(0,0,0,.93);display:flex;align-items:center;justify-content:center;padding:1rem}
+.auth-box{background:var(--s2);border:1px solid rgba(201,151,58,.2);border-radius:var(--r8);padding:2rem;width:100%;max-width:380px;position:relative;max-height:92svh;overflow-y:auto}
+.auth-x{position:absolute;top:.85rem;right:.85rem;background:none;border:none;color:var(--wm);font-size:1.3rem;cursor:pointer}
+.auth-logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;margin-bottom:.2rem}
+.auth-logo span{color:var(--g)}
+.auth-sub{font-size:.74rem;color:var(--wm);margin-bottom:1.5rem}
+.auth-tabs{display:flex;gap:.4rem;margin-bottom:1.35rem}
+.a-tab{flex:1;padding:.44rem;background:var(--s3);border:1px solid rgba(245,240,232,.08);border-radius:var(--r4);color:var(--wm);font-size:.72rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s}
+.a-tab.on{background:var(--gd);border-color:var(--g);color:var(--g)}
+.a-lbl{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--wm);display:block;margin-bottom:.3rem}
+.a-err{font-size:.72rem;color:var(--rd);margin-top:.4rem}
+.a-ok{font-size:.72rem;color:var(--grn);margin-top:.4rem}
+.a-forgot-lnk{font-size:.7rem;color:var(--g);cursor:pointer;background:none;border:none;text-align:right;display:block;margin-top:.38rem;width:100%;font-family:'DM Sans',sans-serif}
+.a-forgot-lnk:hover{text-decoration:underline}
+.a-desc{font-size:.78rem;color:var(--wm);line-height:1.6;margin-bottom:.85rem}
+.a-btn{width:100%;padding:.82rem;background:var(--g);color:var(--bk);border:none;border-radius:var(--r4);font-weight:700;font-size:.86rem;cursor:pointer;margin-top:1rem;letter-spacing:.04em;transition:all .2s;font-family:'DM Sans',sans-serif}
+.a-btn:hover{background:var(--gl)}
+.a-btn:disabled{background:rgba(201,151,58,.35);cursor:not-allowed}
+.a-switch{font-size:.72rem;color:var(--wm);text-align:center;margin-top:.85rem}
+.a-switch span{color:var(--g);cursor:pointer;font-weight:500}
+.a-switch span:hover{text-decoration:underline}

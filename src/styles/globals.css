@@ -1,0 +1,103 @@
+:root {
+  --g:   #C9973A;
+  --gl:  #E8B94F;
+  --gd:  rgba(201,151,58,.14);
+  --bk:  #0A0A08;
+  --s1:  #111110;
+  --s2:  #1A1A18;
+  --s3:  #242422;
+  --w:   #F5F0E8;
+  --wm:  rgba(245,240,232,.65);
+  --wd:  rgba(245,240,232,.25);
+  --grn: #4ade80;
+  --rd:  #f87171;
+  --bl:  #60a5fa;
+  --yw:  #fbbf24;
+  --r4:  4px;
+  --r8:  8px;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bk);
+  color: var(--w);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* ── Custom Cursor (PC/laptop mouse only, NEVER on touch) ── */
+.cur-dot, .cur-ring {
+  position: fixed; top: 0; left: 0;
+  border-radius: 50%; pointer-events: none;
+  transform: translate(-50%,-50%);
+  display: none; /* JS shows only on pointer:fine non-touch */
+  z-index: 9999;
+}
+.cur-dot  { width:10px; height:10px; background:var(--g); z-index:9999; }
+.cur-ring { width:30px; height:30px; border:1.5px solid rgba(201,151,58,.5); z-index:9998; }
+body.has-mouse { cursor: none; }
+body.has-mouse .cur-dot,
+body.has-mouse .cur-ring { display: block; }
+@media (pointer: coarse) {
+  body.has-mouse { cursor: auto !important; }
+  .cur-dot, .cur-ring { display: none !important; }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--s2); }
+::-webkit-scrollbar-thumb { background: var(--g); border-radius: 2px; }
+
+/* ── Toast ── */
+.toast {
+  position: fixed; bottom: 1.5rem; left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--s2); border: 1px solid rgba(201,151,58,.3);
+  padding: .65rem 1.2rem; border-radius: var(--r4);
+  font-size: .78rem; color: var(--w);
+  opacity: 0; transition: all .3s;
+  z-index: 9000; pointer-events: none;
+  white-space: nowrap; max-width: 90vw; text-align: center;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── Badges ── */
+.badge { font-size:.52rem; padding:.13rem .46rem; border-radius:3px; }
+.badge-veg   { background:rgba(74,222,128,.12); color:#4ade80; }
+.badge-spicy { background:rgba(249,115,22,.12);  color:#f97316; }
+.badge-sweet { background:rgba(236,72,153,.12);  color:#ec4899; }
+.badge-pop   { background:var(--gd);             color:var(--g); }
+
+/* ── Common buttons ── */
+.btn-gold {
+  background:var(--g); color:var(--bk); border:none;
+  border-radius:var(--r4); font-family:'DM Sans',sans-serif;
+  font-weight:600; font-size:.82rem; padding:.5rem 1.2rem;
+  cursor:pointer; transition:background .2s; letter-spacing:.04em;
+}
+.btn-gold:hover { background:var(--gl); }
+.btn-outline {
+  background:transparent; border:1px solid var(--wd); color:var(--w);
+  border-radius:var(--r4); font-family:'DM Sans',sans-serif;
+  font-weight:500; font-size:.74rem; padding:.42rem 1rem;
+  cursor:pointer; transition:all .2s;
+}
+.btn-outline:hover { border-color:var(--g); color:var(--g); }
+
+/* ── Form input ── */
+.form-input {
+  width:100%; background:var(--s3);
+  border:1px solid rgba(245,240,232,.1);
+  color:var(--w); padding:.68rem .9rem;
+  border-radius:var(--r4); font-family:'DM Sans',sans-serif;
+  font-size:.84rem; transition:border-color .2s;
+}
+.form-input:focus { outline:none; border-color:var(--g); }
+.form-input::placeholder { color:var(--wd); }
+
+/* ── Overlay ── */
+.overlay {
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.55); z-index:499;
+}
